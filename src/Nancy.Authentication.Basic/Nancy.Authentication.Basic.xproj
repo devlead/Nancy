@@ -10,6 +10,7 @@
     <RootNamespace>Nancy.Authentication.Basic</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+    <DocumentationFile>Nancy.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AssemblyName>Nancy.Authentication.Basic</AssemblyName>
