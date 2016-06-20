@@ -31,13 +31,13 @@ Function Install-Dotnet()
     # Download the dotnet CLI install script
     if (!(Test-Path .\dotnet\install.ps1))
     {
-      Write-Output "Downloading latest version of Dotnet CLI..."
-      Invoke-WebRequest "https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.ps1" -OutFile ".\.dotnet\dotnet-install.ps1"
+      Write-Output "Downloading version 1.0.0-preview2 of Dotnet CLI installer..."
+      Invoke-WebRequest "https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview2/scripts/obtain/dotnet-install.ps1" -OutFile ".\.dotnet\dotnet-install.ps1"
     }
 
     # Run the dotnet CLI install
-    Write-Output "Installing Dotnet CLI..."
-    & .\.dotnet\dotnet-install.ps1
+    Write-Output "Installing Dotnet CLI version 1.0.0-preview1-002702..."
+    & .\.dotnet\dotnet-install.ps1 -Channel beta -Version 1.0.0-preview1-002702
 
     # Add the dotnet folder path to the process. This gets skipped
     # by Install-DotNetCli if it's already installed.
@@ -65,7 +65,7 @@ $PSScriptRoot = split-path -parent $MyInvocation.MyCommand.Definition;
 $Script = Join-Path $PSScriptRoot "build.cake"
 $ToolPath = Join-Path $PSScriptRoot "tools"
 $NuGetPath = Join-Path $ToolPath "nuget/NuGet.exe"
-$CakeVersion = "0.12.0"
+$CakeVersion = "0.13.0"
 $CakePath = Join-Path $ToolPath "Cake.$CakeVersion/Cake.exe"
 
 # Install Dotnet CLI.
